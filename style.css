@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: dimgray;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: darkblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.logo img {
+    width: 150px;
+    border-radius: 10%;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.view-btn {
+    background: #c9a94a;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+/* COMPANY NAME */
+.company-name {
+    background-color: darkblue;
+    text-align: center;
+    padding: 30px;
+    color: white;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 80vh;
+    background: url("car-bg.jpg") center/cover no-repeat;
+    position: relative;
+}
+
+.overlay {
+    background color: ;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.overlay h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.overlay p {
+    font-size: 24px;
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.hero-btn {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 15px 35px;
+    border: 2px solid white;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
