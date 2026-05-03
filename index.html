@@ -3,39 +3,371 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ASNYC RENTALS.LTM</title>
+    <title>ASNYC RENTALS.LTD</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
   </head>
+
   <body>
-    <header>
-      <!-- Top Navbar -->
-      <nav class="navbar">
-        <div class="logo">
-          <img src="logo.png" alt="img" />
-        </div>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div>ASNYC RENTALS.LTD</div>
 
-        <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+      </ul>
+    </nav>
 
-        <a href="#" class="view-btn">View All ↗</a>
-      </nav>
+    <!-- HERO -->
+    <section class="hero">
+      <span class="hero-badge">🚗 Premium Car Rentals</span>
 
-      <!-- Company Name -->
-      <div class="company-name">
-        <h2>ASNYC RENTALS.LTM</h2>
+      <h1>Your Dream Drive Starts Here</h1>
+
+      <p>
+        Browse our handpicked fleet of premium vehicles. Transparent pricing,
+        zero hidden fees — just pure driving pleasure.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#fleet" class="btn-primary">Browse Fleet ↓</a>
+        <a href="about.html" class="btn-outline">Learn More</a>
       </div>
 
-      <!-- Hero Section -->
-      <section class="hero">
-        <div class="overlay">
-          <h1>Welcome To Your One Stop Dream Car Comparison Site</h1>
-
-          <a href="#" class="hero-btn">HOME / CAR HIRE</a>
+      <div class="hero-stats">
+        <div class="stat">
+          <h3>50+</h3>
+          <p>Vehicles</p>
         </div>
-      </section>
-    </header>
+
+        <div class="stat">
+          <h3>2K+</h3>
+          <p>Happy Clients</p>
+        </div>
+
+        <div class="stat">
+          <h3>24/7</h3>
+          <p>Support</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION HEADER -->
+    <div class="section-header" id="fleet">
+      <span class="tag">Our Fleet</span>
+      <h2>Choose Your Ride</h2>
+      <p>
+        All vehicles are fully insured, regularly serviced, and ready to go.
+      </p>
+    </div>
+
+    <!-- CARS SECTION -->
+    <section class="cars-section">
+      <!-- CAR 1 -->
+      <div class="car-card">
+        <div class="car-image">
+          <img src="logo1.jpg" alt="Toyota Crown Hybrid" />
+          <span class="car-badge">Hybrid</span>
+        </div>
+
+        <div class="car-body">
+          <h2>Toyota Crown Hybrid</h2>
+
+          <div class="car-details">
+            <span>🪑 5 Seats</span>
+            <span>⚙️ 2500cc</span>
+            <span>⛽ Hybrid</span>
+            <span>🔄 Auto</span>
+          </div>
+
+          <div class="car-bottom">
+            <div class="car-price">
+              <span class="amount">Ksh 8,500</span>
+              <span class="period">per day · Ksh 180,000/mo</span>
+            </div>
+
+            <button
+              class="book-btn"
+              onclick="
+                openModal('Toyota Crown Hybrid', 'SE003', 'Ksh 8,500/day')
+              "
+            >
+              Book Now ↗
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAR 2 -->
+      <div class="car-card">
+        <div class="car-image">
+          <img src="logo2.jpg" alt="Mercedes-Benz C200" />
+          <span class="car-badge">Luxury</span>
+        </div>
+
+        <div class="car-body">
+          <h2>Mercedes-Benz C200</h2>
+
+          <div class="car-details">
+            <span>🪑 5 Seats</span>
+            <span>⚙️ 2000cc</span>
+            <span>⛽ Petrol</span>
+            <span>🔄 Auto</span>
+          </div>
+
+          <div class="car-bottom">
+            <div class="car-price">
+              <span class="amount">Ksh 14,000</span>
+              <span class="period">per day · Ksh 300,000/mo</span>
+            </div>
+
+            <button
+              class="book-btn"
+              onclick="
+                openModal('Mercedes-Benz C200', 'LX007', 'Ksh 14,000/day')
+              "
+            >
+              Book Now ↗
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAR 3 -->
+      <div class="car-card">
+        <div class="car-image">
+          <img src="logo3.jpg" alt="Toyota Land Cruiser V8" />
+          <span class="car-badge">4x4 SUV</span>
+        </div>
+
+        <div class="car-body">
+          <h2>Toyota Land Cruiser V8</h2>
+
+          <div class="car-details">
+            <span>🪑 7 Seats</span>
+            <span>⚙️ 4500cc</span>
+            <span>⛽ Diesel</span>
+            <span>🔄 6-speed manual</span>
+          </div>
+
+          <div class="car-bottom">
+            <div class="car-price">
+              <span class="amount">Ksh 20,000</span>
+              <span class="period">per day · Ksh 450,000/mo</span>
+            </div>
+
+            <button
+              class="book-btn"
+              onclick="
+                openModal('Toyota Land Cruiser V8', '4X011', 'Ksh 20,000/day')
+              "
+            >
+              Book Now ↗
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAR 4 -->
+      <div class="car-card">
+        <div class="car-image">
+          <img src="logo4.jpg" alt="Subaru Outback" />
+          <span class="car-badge">AWD</span>
+        </div>
+
+        <div class="car-body">
+          <h2>Subaru Outback</h2>
+
+          <div class="car-details">
+            <span>🪑 5 Seats</span>
+            <span>⚙️ 2500cc</span>
+            <span>⛽ Petrol</span>
+            <span>🔄 CVT Auto</span>
+          </div>
+
+          <div class="car-bottom">
+            <div class="car-price">
+              <span class="amount">Ksh 9,000</span>
+              <span class="period">per day · Ksh 200,000/mo</span>
+            </div>
+
+            <button
+              class="book-btn"
+              onclick="
+                openModal('Subaru Outback 2.5i', 'SB015', 'Ksh 9,000/day')
+              "
+            >
+              Book Now ↗
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAR 5 -->
+      <div class="car-card">
+        <div class="car-image">
+          <img src="logo5.jpg" alt="BMW 3 Series" />
+          <span class="car-badge">Sport</span>
+        </div>
+
+        <div class="car-body">
+          <h2>BMW 3 Series 320i</h2>
+
+          <div class="car-details">
+            <span>🪑 5 Seats</span>
+            <span>⚙️ 2000cc</span>
+            <span>⛽ Petrol</span>
+            <span>🔄 Auto</span>
+          </div>
+
+          <div class="car-bottom">
+            <div class="car-price">
+              <span class="amount">Ksh 16,000</span>
+              <span class="period">per day · Ksh 350,000/mo</span>
+            </div>
+
+            <button
+              class="book-btn"
+              onclick="
+                openModal('BMW 3 Series 320i', 'BM019', 'Ksh 16,000/day')
+              "
+            >
+              Book Now ↗
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAR 6 -->
+      <div class="car-card">
+        <div class="car-image">
+          <img src="logo6.jpg" alt="Toyota Hiace" />
+          <span class="car-badge">Van</span>
+        </div>
+
+        <div class="car-body">
+          <h2>Toyota Hiace Minibus [Partybus Edition]</h2>
+
+          <div class="car-details">
+            <span>🪑 14 Seats</span>
+            <span>⚙️ 2800cc</span>
+            <span>⛽ Diesel</span>
+            <span>🔄 Manual</span>
+          </div>
+
+          <div class="car-bottom">
+            <div class="car-price">
+              <span class="amount">Ksh 12,000</span>
+              <span class="period">per day · Ksh 260,000/mo</span>
+            </div>
+
+            <button
+              class="book-btn"
+              onclick="
+                openModal('Toyota Hiace Minibus', 'VN022', 'Ksh 12,000/day')
+              "
+            >
+              Book Now ↗
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING FORM -->
+    <div class="form-overlay" id="bookingform">
+      <div class="form">
+        <button class="form-close" onclick="closeform()">✕</button>
+
+        <div class="form-car-info">
+          <div class="dot"></div>
+
+          <div>
+            <h3 id="form-car-name">Car Name</h3>
+            <span id="form-car-details">Code · Price</span>
+          </div>
+        </div>
+
+        <h2>Book Your Ride</h2>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="e.g. John Doe" />
+            <span class="error-msg" id="err-name">
+              Please enter your full name.
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="+254 7XX XXX XXX" />
+            <span class="error-msg" id="err-phone">
+              Please enter a valid phone number (min 10 digits).
+            </span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pickupDate">Pick-Up Date</label>
+            <input type="date" id="pickupDate" />
+            <span class="error-msg" id="err-pickup">
+              Please select a pick-up date.
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="returnDate">Return Date</label>
+            <input type="date" id="returnDate" />
+            <span class="error-msg" id="err-return">
+              Return date must be after pick-up date.
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="period">Rental Period</label>
+
+          <select id="period">
+            <option value="">Select period</option>
+            <option>Daily</option>
+            <option>Weekly</option>
+            <option>Monthly</option>
+          </select>
+
+          <span class="error-msg" id="err-period">
+            Please select a rental period.
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Additional Notes</label>
+
+          <textarea
+            id="notes"
+            placeholder="Any special requests or requirements..."
+          ></textarea>
+        </div>
+
+        <button class="submit-btn" onclick="validateAndBook()">
+          Confirm Booking ✓
+        </button>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2025 <span>ASNYC Rentals Ltd</span></p>
+    </footer>
   </body>
 </html>

@@ -1,95 +1,576 @@
+/* =============================================
+   ASNYC RENTALS LTD — Services Page Styles
+   ============================================= */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* CSS Variables for consistent theming */
+:root {
+  --navy:   #0b1d51;
+  --gold:   #f5c518;
+  --dark:   #0e0e0e;
+  --card:   #1a1a1a;
+  --card2:  #222;
+  --white:  #ffffff;
+  --grey:   #aaa;
+  --radius: 20px;
+}
+
+/* BODY */
 body {
-    font-family: Arial, sans-serif;
-    background-color: dimgray;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--dark);
+  color: var(--white);
+  overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* ── NAVBAR ── */
 .navbar {
-    background-color: darkblue;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
+  background-color: var(--navy);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
-.logo img {
-    width: 150px;
-    border-radius: 10%;
+.logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+  color: var(--gold);
 }
+
+.logo span { color: var(--white); }
 
 .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 35px;
+  display: flex;
+  list-style: none;
+  gap: 35px;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+  position: relative;
 }
 
-.view-btn {
-    background: #c9a94a;
-    color: white;
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 30px;
-    font-weight: bold;
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: var(--gold);
+  transition: width 0.3s;
 }
 
-/* COMPANY NAME */
-.company-name {
-    background-color: darkblue;
-    text-align: center;
-    padding: 30px;
-    color: white;
-}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--gold); }
+.nav-links a.active::after { width: 100%; }
 
-/* HERO SECTION */
+/* ── PAGE HERO ── */
 .hero {
-    height: 80vh;
-    background: url("car-bg.jpg") center/cover no-repeat;
-    position: relative;
+  background: linear-gradient(135deg, #0b1d51 0%, #0e0e0e 70%);
+  padding: 80px 80px 60px;
+  position: relative;
+  overflow: hidden;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.overlay {
-    background color: ;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    padding: 20px;
+/* Large decorative background text */
+.hero::before {
+  content: 'SERVICES';
+  position: absolute;
+  right: -20px; bottom: -50px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 220px;
+  color: rgba(245,197,24,0.04);
+  pointer-events: none;
 }
 
-.overlay h1 {
-    font-size: 60px;
-    margin-bottom: 20px;
-    font-weight: bold;
+.hero-badge {
+  background: var(--gold);
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  width: fit-content;
 }
 
-.overlay p {
-    font-size: 24px;
-    max-width: 1000px;
-    margin: 0 auto 30px;
-    line-height: 1.6;
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(42px, 6vw, 80px);
+  line-height: 1.05;
+  max-width: 650px;
+  letter-spacing: 2px;
 }
 
-.hero-btn {
-    display: inline-block;
-    margin: 0 auto;
-    padding: 15px 35px;
-    border: 2px solid white;
-    border-radius: 30px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.hero h1 span { color: var(--gold); }
+
+.hero p {
+  color: var(--grey);
+  font-size: 15px;
+  margin-top: 16px;
+  max-width: 500px;
+  line-height: 1.8;
+}
+
+/* ── SECTION HEADER ── */
+.section-header {
+  text-align: center;
+  padding: 70px 60px 40px;
+}
+
+.section-header .tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.section-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 5vw, 60px);
+  letter-spacing: 2px;
+}
+
+.section-header p {
+  color: var(--grey);
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* ── SERVICES GRID ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 10px 60px 80px;
+}
+
+/* ── SERVICE CARD ── */
+.service-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.service-icon {
+  font-size: 36px;
+  width: 64px;
+  height: 64px;
+  background: rgba(245,197,24,0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(245,197,24,0.2);
+}
+
+.service-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.service-card p {
+  font-size: 13px;
+  color: var(--grey);
+  line-height: 1.8;
+  flex: 1;
+}
+
+.service-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gold);
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.service-price span {
+  font-size: 12px;
+  color: var(--grey);
+  font-weight: 400;
+}
+
+/* ── WHY CHOOSE US STRIP ── */
+.why-strip {
+  background: var(--navy);
+  padding: 60px 80px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.why-item .icon {
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+
+.why-item h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.why-item p {
+  font-size: 13px;
+  color: var(--grey);
+  line-height: 1.7;
+}
+
+/* ── CTA SECTION ── */
+.cta-section {
+  text-align: center;
+  padding: 80px 60px;
+  background: linear-gradient(135deg, #0b1d51 0%, #0e0e0e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: 'BOOK';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 300px;
+  color: rgba(245,197,24,0.03);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.cta-section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 5vw, 60px);
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section h2 span { color: var(--gold); }
+
+.cta-section p {
+  color: var(--grey);
+  font-size: 15px;
+  margin-top: 12px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section a {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── CARS SECTION (if used on services page) ── */
+.cars-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  padding: 60px;
+}
+
+.car-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.car-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.car-image img {
+  width: 100%;
+  border-radius: 15px;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ── BOOK BUTTON ── */
+.book-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  transition: background 0.2s, transform 0.2s;
+  letter-spacing: 1px;
+}
+
+.book-btn:hover {
+  background: var(--gold);
+  color: #000;
+  transform: scale(1.02);
+}
+
+/* ── FORM OVERLAY (POPUP) ── */
+.form-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.form-overlay.active { display: flex; }
+
+/* ── FORM BOX ── */
+.form {
+  background: var(--card);
+  width: 90%;
+  max-width: 560px;
+  padding: 40px;
+  border-radius: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+  animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.93) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ── CLOSE BUTTON ── */
+.form-close {
+  position: absolute;
+  top: 18px; right: 22px;
+  background: transparent;
+  border: none;
+  color: var(--grey);
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.form-close:hover { color: var(--white); }
+
+/* ── FORM TITLE ── */
+.form h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+/* ── CAR INFO ── */
+.form-car-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.form-car-info h3 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.form-car-info p {
+  font-size: 13px;
+  color: var(--grey);
+}
+
+.dot {
+  width: 12px; height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── TWO COLUMN ROW ── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ── LABEL ── */
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--grey);
+  text-transform: uppercase;
+}
+
+/* ── INPUTS ── */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  background: #111;
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+}
+
+.form-group input.error,
+.form-group select.error {
+  border-color: #e74c3c;
+}
+
+.form-group select option { background: var(--card); }
+
+/* ── TEXTAREA ── */
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* ── ERROR MESSAGE ── */
+.error-msg {
+  display: none;
+  color: #e74c3c;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.error-msg.visible { display: block; }
+
+/* ── SUBMIT BUTTON ── */
+.submit-btn {
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: var(--gold);
+  color: #000;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 6px;
+  letter-spacing: 1px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245,197,24,0.35);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  font-size: 13px;
+  color: var(--grey);
+  letter-spacing: 1px;
+}
+
+footer span { color: var(--gold); }
+
+/* ── BUTTONS ── */
+.btn-primary {
+  background: var(--gold);
+  color: #000;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245,197,24,0.4);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .navbar { padding: 16px 24px; }
+  .hero { padding: 60px 24px 40px; }
+  .services-grid { padding: 10px 20px 60px; }
+  .why-strip { grid-template-columns: repeat(2, 1fr); padding: 40px 24px; }
+  .cta-section { padding: 60px 24px; }
+  .form { padding: 28px 22px; }
+  .form-row { grid-template-columns: 1fr; }
+  .section-header { padding: 50px 20px 30px; }
+}
+
+@media (max-width: 480px) {
+  .nav-links { gap: 16px; }
+  .why-strip { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
 }
