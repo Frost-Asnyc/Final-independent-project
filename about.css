@@ -1,0 +1,247 @@
+/* =============================================
+   ASNYC RENTALS LTD — About Page Styles
+   ============================================= */
+
+/* ── PAGE HERO ── */
+.page-hero {
+  background: linear-gradient(135deg, #0b1d51 0%, #0e0e0e 70%);
+  padding: 80px 80px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: 'ABOUT';
+  position: absolute;
+  right: -20px; bottom: -50px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 280px;
+  color: rgba(245,197,24,0.04);
+  pointer-events: none;
+}
+
+.page-hero .tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.page-hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(42px, 6vw, 75px);
+  letter-spacing: 2px;
+  max-width: 600px;
+  line-height: 1.05;
+}
+
+.page-hero h1 span { color: var(--gold); }
+
+.page-hero p {
+  color: var(--grey);
+  font-size: 15px;
+  margin-top: 16px;
+  max-width: 500px;
+  line-height: 1.8;
+}
+
+/* ── ABOUT CONTENT ── */
+.about-content {
+  padding: 70px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.about-text h2 span { color: var(--gold); }
+
+.about-text p {
+  color: var(--grey);
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+/* ── VALUE CARDS ── */
+.about-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.value-card {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 22px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.value-card:hover {
+  transform: translateX(6px);
+  border-color: var(--gold);
+}
+
+.value-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.value-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.value-card p {
+  font-size: 13px;
+  color: var(--grey);
+  line-height: 1.7;
+}
+
+/* ── STATS STRIP ── */
+.stats-strip {
+  background: var(--navy);
+  padding: 50px 80px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.stats-strip .stat h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: var(--gold);
+}
+
+.stats-strip .stat p {
+  font-size: 12px;
+  color: var(--grey);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* ── TEAM SECTION ── */
+.team-section {
+  padding: 70px 80px;
+  text-align: center;
+}
+
+.team-section .section-header {
+  padding: 0 0 40px;
+}
+
+/* 4 columns for the team grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ── TEAM CARD ── */
+.team-card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 30px 20px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.2s, border-color 0.2s;
+  position: relative;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+}
+
+/* ── FOUNDER CARD — spans full width on its own row ── */
+.team-card.founder {
+  grid-column: 1 / -1;
+  max-width: 400px;
+  margin: 0 auto 10px;
+  border-color: var(--gold);
+  background: linear-gradient(135deg, #1a1a1a 0%, #1c1a0a 100%);
+}
+
+/* Founder badge on top of card */
+.founder-badge {
+  position: absolute;
+  top: -12px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 16px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.team-avatar {
+  width: 70px;
+  height: 70px;
+  background: var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin: 0 auto 16px;
+  border: 2px solid var(--gold);
+}
+
+.team-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.team-card span {
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.team-card p {
+  font-size: 13px;
+  color: var(--grey);
+  margin-top: 10px;
+  line-height: 1.7;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .page-hero { padding: 60px 24px 40px; }
+  .about-content { grid-template-columns: 1fr; padding: 40px 24px; gap: 30px; }
+  .stats-strip { grid-template-columns: repeat(2, 1fr); padding: 40px 24px; }
+  .team-section { padding: 50px 24px; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-card.founder { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .team-grid { grid-template-columns: 1fr; }
+}
