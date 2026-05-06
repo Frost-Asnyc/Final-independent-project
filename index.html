@@ -4,265 +4,402 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ASNYC RENTALS.LTD</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <main>
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <div class="logo">ASNYC <span>RENTALS.LTD</span></div>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" class="active"
+              ><i
+                class="fa-solid fa-house"
+                style="margin-right: 6px; font-size: 11px"
+              ></i
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="about.html"
+              ><i
+                class="fa-solid fa-users"
+                style="margin-right: 6px; font-size: 11px"
+              ></i
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a href="services.html"
+              ><i
+                class="fa-solid fa-car"
+                style="margin-right: 6px; font-size: 11px"
+              ></i
+              >Services</a
+            >
+          </li>
+        </ul>
+      </nav>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-      <div class="logo">ASNYC <span>RENTALS.LTD</span></div>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active"><i class="fa-solid fa-house" style="margin-right:6px;font-size:11px;"></i>Home</a></li>
-        <li><a href="about.html"><i class="fa-solid fa-users" style="margin-right:6px;font-size:11px;"></i>About Us</a></li>
-        <li><a href="services.html"><i class="fa-solid fa-car" style="margin-right:6px;font-size:11px;"></i>Services</a></li>
-      </ul>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero">
-      <span class="hero-badge"><i class="fa-solid fa-car"></i> Premium Car Rentals</span>
-      <h1>Your Dream Drive <span>Starts Here</span></h1>
-      <p>Browse our handpicked fleet of premium vehicles. Transparent pricing, zero hidden fees — just pure driving pleasure.</p>
-      <div class="hero-btns">
-        <a href="#fleet" class="btn-primary">Browse Fleet <i class="fa-solid fa-arrow-down"></i></a>
-        <a href="about.html" class="btn-outline">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <div class="stat-icon"><i class="fa-solid fa-car"></i></div>
-          <h3>50+</h3>
-          <p>Vehicles</p>
+      <!-- HERO -->
+      <section class="hero">
+        <span class="hero-badge"
+          ><i class="fa-solid fa-car"></i> Premium Car Rentals</span
+        >
+        <h1>Your Dream Drive <span>Starts Here</span></h1>
+        <p>
+          Browse our handpicked fleet of premium vehicles. Transparent pricing,
+          zero hidden fees — just pure driving pleasure.
+        </p>
+        <div class="hero-btns">
+          <a href="#fleet" class="btn-primary"
+            >Browse Fleet <i class="fa-solid fa-arrow-down"></i
+          ></a>
+          <a href="about.html" class="btn-outline"
+            >Learn More <i class="fa-solid fa-arrow-right"></i
+          ></a>
         </div>
-        <div class="stat">
-          <div class="stat-icon"><i class="fa-solid fa-face-smile"></i></div>
-          <h3>2K+</h3>
-          <p>Happy Clients</p>
-        </div>
-        <div class="stat">
-          <div class="stat-icon"><i class="fa-solid fa-headset"></i></div>
-          <h3>24/7</h3>
-          <p>Support</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION HEADER -->
-    <div class="section-header" id="fleet">
-      <span class="tag">Our Fleet</span>
-      <h2>Choose Your Ride</h2>
-      <p>All vehicles are fully insured, regularly serviced, and ready to go.</p>
-    </div>
-
-    <!-- CARS SECTION -->
-    <section class="cars-section">
-
-      <!-- CAR 1 -->
-      <div class="car-card">
-        <div class="car-image">
-          <img src="logo11.jpg" alt="Audi RSQ8" />
-          <span class="car-badge">SUV</span>
-        </div>
-        <div class="car-body">
-          <h2>Audi RSQ8</h2>
-          <div class="car-details">
-            <span><i class="fa-solid fa-user-group"></i> 5 Seats</span>
-            <span><i class="fa-solid fa-gears"></i> 5000cc</span>
-            <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
-            <span><i class="fa-solid fa-rotate"></i> Automatic</span>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-icon"><i class="fa-solid fa-car"></i></div>
+            <h3>50+</h3>
+            <p>Vehicles</p>
           </div>
-          <div class="car-bottom">
-            <div class="car-price">
-              <span class="amount">Ksh 80,000</span>
-              <span class="period">per day · Ksh 850,000/mo</span>
+          <div class="stat">
+            <div class="stat-icon"><i class="fa-solid fa-face-smile"></i></div>
+            <h3>2K+</h3>
+            <p>Happy Clients</p>
+          </div>
+          <div class="stat">
+            <div class="stat-icon"><i class="fa-solid fa-headset"></i></div>
+            <h3>24/7</h3>
+            <p>Support</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION HEADER -->
+      <section class="section-header" id="fleet">
+        <span class="tag">Our Fleet</span>
+        <h2>Choose Your Ride</h2>
+        <p>
+          All vehicles are fully insured, regularly serviced, and ready to go.
+        </p>
+      </section>
+
+      <!-- CARS SECTION -->
+      <section class="cars-section">
+        <!-- CAR 1 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="logo11.jpg" alt="Audi RSQ8" />
+            <span class="car-badge">SUV</span>
+          </div>
+          <div class="car-body">
+            <h2>Audi RSQ8</h2>
+            <div class="car-details">
+              <span><i class="fa-solid fa-user-group"></i> 5 Seats</span>
+              <span><i class="fa-solid fa-gears"></i> 5000cc</span>
+              <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+              <span><i class="fa-solid fa-rotate"></i> Automatic</span>
             </div>
-            <button class="book-btn" onclick="openModal('Audi RSQ8', 'SE001', 'Ksh 80,000/day')">Book Now <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- CAR 2 -->
-      <div class="car-card">
-        <div class="car-image">
-          <img src="logo8.jpg" alt="BMW XB7 Alpina" />
-          <span class="car-badge">SUV</span>
-        </div>
-        <div class="car-body">
-          <h2>BMW XB7 Alpina</h2>
-          <div class="car-details">
-            <span><i class="fa-solid fa-user-group"></i> 5 Seats</span>
-            <span><i class="fa-solid fa-gears"></i> 5000cc</span>
-            <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
-            <span><i class="fa-solid fa-rotate"></i> Automatic</span>
-          </div>
-          <div class="car-bottom">
-            <div class="car-price">
-              <span class="amount">Ksh 75,000</span>
-              <span class="period">per day · Ksh 750,000/mo</span>
+            <div class="car-bottom">
+              <div class="car-price">
+                <span class="amount">Ksh 80,000</span>
+                <span class="period">per day · Ksh 850,000/mo</span>
+              </div>
+              <button
+                class="book-btn"
+                onclick="openModal('Audi RSQ8', 'SE001', 'Ksh 80,000/day')"
+              >
+                Book Now <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
             </div>
-            <button class="book-btn" onclick="openModal('BMW XB7 Alpina', 'SE002', 'Ksh 75,000/day')">Book Now <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
           </div>
         </div>
-      </div>
 
-      <!-- CAR 3 -->
-      <div class="car-card">
-        <div class="car-image">
-          <img src="logo12.jpg" alt="Audi RS7" />
-          <span class="car-badge">Sport</span>
-        </div>
-        <div class="car-body">
-          <h2>Audi RS7 Sportback</h2>
-          <div class="car-details">
-            <span><i class="fa-solid fa-user-group"></i> 5 Seats</span>
-            <span><i class="fa-solid fa-gears"></i> 6000cc</span>
-            <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
-            <span><i class="fa-solid fa-rotate"></i> Automatic</span>
+        <!-- CAR 2 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="logo8.jpg" alt="BMW XB7 Alpina" />
+            <span class="car-badge">SUV</span>
           </div>
-          <div class="car-bottom">
-            <div class="car-price">
-              <span class="amount">Ksh 50,000</span>
-              <span class="period">per day · Ksh 650,000/mo</span>
+          <div class="car-body">
+            <h2>BMW XB7 Alpina</h2>
+            <div class="car-details">
+              <span><i class="fa-solid fa-user-group"></i> 5 Seats</span>
+              <span><i class="fa-solid fa-gears"></i> 5000cc</span>
+              <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+              <span><i class="fa-solid fa-rotate"></i> Automatic</span>
             </div>
-            <button class="book-btn" onclick="openModal('Audi RS7 Sportback', 'SE003', 'Ksh 50,000/day')">Book Now <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- CAR 4 -->
-      <div class="car-card">
-        <div class="car-image">
-          <img src="logo9.webp" alt="Mercedes-Benz S600 Maybach" />
-          <span class="car-badge">Sedan</span>
-        </div>
-        <div class="car-body">
-          <h2>Mercedes-Benz S600 Maybach</h2>
-          <div class="car-details">
-            <span><i class="fa-solid fa-user-group"></i> 4 Seats</span>
-            <span><i class="fa-solid fa-gears"></i> 6000cc</span>
-            <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
-            <span><i class="fa-solid fa-rotate"></i> Automatic</span>
-          </div>
-          <div class="car-bottom">
-            <div class="car-price">
-              <span class="amount">Ksh 90,000</span>
-              <span class="period">per day · Ksh 950,000/mo</span>
+            <div class="car-bottom">
+              <div class="car-price">
+                <span class="amount">Ksh 75,000</span>
+                <span class="period">per day · Ksh 750,000/mo</span>
+              </div>
+              <button
+                class="book-btn"
+                onclick="openModal('BMW XB7 Alpina', 'SE002', 'Ksh 75,000/day')"
+              >
+                Book Now <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
             </div>
-            <button class="book-btn" onclick="openModal('Mercedes-Benz S600 Maybach', 'SE004', 'Ksh 90,000/day')">Book Now <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
           </div>
         </div>
-      </div>
 
-      <!-- CAR 5 -->
-      <div class="car-card">
-        <div class="car-image">
-          <img src="logo5.jpg" alt="BMW 3 Series 320i" />
-          <span class="car-badge">Sport</span>
-        </div>
-        <div class="car-body">
-          <h2>BMW 3 Series 320i</h2>
-          <div class="car-details">
-            <span><i class="fa-solid fa-user-group"></i> 5 Seats</span>
-            <span><i class="fa-solid fa-gears"></i> 2000cc</span>
-            <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
-            <span><i class="fa-solid fa-rotate"></i> Automatic</span>
+        <!-- CAR 3 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="logo12.jpg" alt="Audi RS7" />
+            <span class="car-badge">Sport</span>
           </div>
-          <div class="car-bottom">
-            <div class="car-price">
-              <span class="amount">Ksh 16,000</span>
-              <span class="period">per day · Ksh 350,000/mo</span>
+          <div class="car-body">
+            <h2>Audi RS7 Sportback</h2>
+            <div class="car-details">
+              <span><i class="fa-solid fa-user-group"></i> 5 Seats</span>
+              <span><i class="fa-solid fa-gears"></i> 6000cc</span>
+              <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+              <span><i class="fa-solid fa-rotate"></i> Automatic</span>
             </div>
-            <button class="book-btn" onclick="openModal('BMW 3 Series 320i', 'SE005', 'Ksh 16,000/day')">Book Now <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- CAR 6 -->
-      <div class="car-card">
-        <div class="car-image">
-          <img src="logo10.jpg" alt="Mercedes-Benz GLS600 Maybach" />
-          <span class="car-badge">SUV</span>
-        </div>
-        <div class="car-body">
-          <h2>Mercedes-Benz GLS600 Maybach</h2>
-          <div class="car-details">
-            <span><i class="fa-solid fa-user-group"></i> 4 Seats</span>
-            <span><i class="fa-solid fa-gears"></i> 5000cc</span>
-            <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
-            <span><i class="fa-solid fa-rotate"></i> Automatic</span>
-          </div>
-          <div class="car-bottom">
-            <div class="car-price">
-              <span class="amount">Ksh 100,000</span>
-              <span class="period">per day · Ksh 1,000,000/mo</span>
+            <div class="car-bottom">
+              <div class="car-price">
+                <span class="amount">Ksh 50,000</span>
+                <span class="period">per day · Ksh 650,000/mo</span>
+              </div>
+              <button
+                class="book-btn"
+                onclick="
+                  openModal('Audi RS7 Sportback', 'SE003', 'Ksh 50,000/day')
+                "
+              >
+                Book Now <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
             </div>
-            <button class="book-btn" onclick="openModal('Mercedes-Benz GLS600 Maybach', 'SE006', 'Ksh 100,000/day')">Book Now <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
           </div>
         </div>
-      </div>
 
-    </section>
-
-    <!-- BOOKING FORM -->
-    <div class="form-overlay" id="bookingform">
-      <div class="form">
-        <button class="form-close" onclick="closeform()">✕</button>
-        <div class="form-car-info">
-          <div class="dot"></div>
-          <div>
-            <h3 id="form-car-name">Car Name</h3>
-            <span id="form-car-details">Code · Price</span>
+        <!-- CAR 4 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="logo9.webp" alt="Mercedes-Benz S600 Maybach" />
+            <span class="car-badge">Sedan</span>
+          </div>
+          <div class="car-body">
+            <h2>Mercedes-Benz S600 Maybach</h2>
+            <div class="car-details">
+              <span><i class="fa-solid fa-user-group"></i> 4 Seats</span>
+              <span><i class="fa-solid fa-gears"></i> 6000cc</span>
+              <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+              <span><i class="fa-solid fa-rotate"></i> Automatic</span>
+            </div>
+            <div class="car-bottom">
+              <div class="car-price">
+                <span class="amount">Ksh 90,000</span>
+                <span class="period">per day · Ksh 950,000/mo</span>
+              </div>
+              <button
+                class="book-btn"
+                onclick="
+                  openModal(
+                    'Mercedes-Benz S600 Maybach',
+                    'SE004',
+                    'Ksh 90,000/day',
+                  )
+                "
+              >
+                Book Now <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </div>
           </div>
         </div>
-        <h2>Book Your Ride</h2>
-        <div class="form-row">
+
+        <!-- CAR 5 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="logo5.jpg" alt="BMW 3 Series 320i" />
+            <span class="car-badge">Sport</span>
+          </div>
+          <div class="car-body">
+            <h2>BMW 3 Series 320i</h2>
+            <div class="car-details">
+              <span><i class="fa-solid fa-user-group"></i> 5 Seats</span>
+              <span><i class="fa-solid fa-gears"></i> 2000cc</span>
+              <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+              <span><i class="fa-solid fa-rotate"></i> Automatic</span>
+            </div>
+            <div class="car-bottom">
+              <div class="car-price">
+                <span class="amount">Ksh 16,000</span>
+                <span class="period">per day · Ksh 350,000/mo</span>
+              </div>
+              <button
+                class="book-btn"
+                onclick="
+                  openModal('BMW 3 Series 320i', 'SE005', 'Ksh 16,000/day')
+                "
+              >
+                Book Now <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CAR 6 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="logo10.jpg" alt="Mercedes-Benz GLS600 Maybach" />
+            <span class="car-badge">SUV</span>
+          </div>
+          <div class="car-body">
+            <h2>Mercedes-Benz GLS600 Maybach</h2>
+            <div class="car-details">
+              <span><i class="fa-solid fa-user-group"></i> 4 Seats</span>
+              <span><i class="fa-solid fa-gears"></i> 5000cc</span>
+              <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+              <span><i class="fa-solid fa-rotate"></i> Automatic</span>
+            </div>
+            <div class="car-bottom">
+              <div class="car-price">
+                <span class="amount">Ksh 100,000</span>
+                <span class="period">per day · Ksh 1,000,000/mo</span>
+              </div>
+              <button
+                class="book-btn"
+                onclick="
+                  openModal(
+                    'Mercedes-Benz GLS600 Maybach',
+                    'SE006',
+                    'Ksh 100,000/day',
+                  )
+                "
+              >
+                Book Now <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOOKING FORM -->
+      <div class="form-overlay" id="bookingform">
+        <div class="form">
+          <button class="form-close" onclick="closeform()">✕</button>
+          <div class="form-car-info">
+            <div class="dot"></div>
+            <div>
+              <h3 id="form-car-name">Car Name</h3>
+              <span id="form-car-details">Code · Price</span>
+            </div>
+          </div>
+          <h2>Book Your Ride</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName"
+                ><i
+                  class="fa-solid fa-user"
+                  style="margin-right: 6px; color: #f5c518"
+                ></i
+                >Full Name</label
+              >
+              <input type="text" id="fullName" placeholder="e.g. John Doe" />
+              <span class="error-msg" id="err-name"
+                >Please enter your full name.</span
+              >
+            </div>
+            <div class="form-group">
+              <label for="phone"
+                ><i
+                  class="fa-solid fa-phone"
+                  style="margin-right: 6px; color: #f5c518"
+                ></i
+                >Phone Number</label
+              >
+              <input type="tel" id="phone" placeholder="+254 7XX XXX XXX" />
+              <span class="error-msg" id="err-phone"
+                >Please enter a valid phone number (min 10 digits).</span
+              >
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="pickupDate"
+                ><i
+                  class="fa-solid fa-calendar"
+                  style="margin-right: 6px; color: #f5c518"
+                ></i
+                >Pick-Up Date</label
+              >
+              <input type="date" id="pickupDate" />
+              <span class="error-msg" id="err-pickup"
+                >Please select a pick-up date.</span
+              >
+            </div>
+            <div class="form-group">
+              <label for="returnDate"
+                ><i
+                  class="fa-solid fa-calendar-check"
+                  style="margin-right: 6px; color: #f5c518"
+                ></i
+                >Return Date</label
+              >
+              <input type="date" id="returnDate" />
+              <span class="error-msg" id="err-return"
+                >Return date must be after pick-up date.</span
+              >
+            </div>
+          </div>
           <div class="form-group">
-            <label for="fullName"><i class="fa-solid fa-user" style="margin-right:6px;color:#f5c518;"></i>Full Name</label>
-            <input type="text" id="fullName" placeholder="e.g. John Doe" />
-            <span class="error-msg" id="err-name">Please enter your full name.</span>
+            <label for="period"
+              ><i
+                class="fa-solid fa-clock"
+                style="margin-right: 6px; color: #f5c518"
+              ></i
+              >Rental Period</label
+            >
+            <select id="period">
+              <option value="">Select period</option>
+              <option>Daily</option>
+              <option>Weekly</option>
+              <option>Monthly</option>
+            </select>
+            <span class="error-msg" id="err-period"
+              >Please select a rental period.</span
+            >
           </div>
           <div class="form-group">
-            <label for="phone"><i class="fa-solid fa-phone" style="margin-right:6px;color:#f5c518;"></i>Phone Number</label>
-            <input type="tel" id="phone" placeholder="+254 7XX XXX XXX" />
-            <span class="error-msg" id="err-phone">Please enter a valid phone number (min 10 digits).</span>
+            <label for="notes"
+              ><i
+                class="fa-solid fa-note-sticky"
+                style="margin-right: 6px; color: #f5c518"
+              ></i
+              >Additional Notes</label
+            >
+            <textarea
+              id="notes"
+              placeholder="Any special requests or requirements..."
+            ></textarea>
           </div>
+          <button class="submit-btn" onclick="validateAndBook()">
+            Confirm Booking <i class="fa-solid fa-check"></i>
+          </button>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="pickupDate"><i class="fa-solid fa-calendar" style="margin-right:6px;color:#f5c518;"></i>Pick-Up Date</label>
-            <input type="date" id="pickupDate" />
-            <span class="error-msg" id="err-pickup">Please select a pick-up date.</span>
-          </div>
-          <div class="form-group">
-            <label for="returnDate"><i class="fa-solid fa-calendar-check" style="margin-right:6px;color:#f5c518;"></i>Return Date</label>
-            <input type="date" id="returnDate" />
-            <span class="error-msg" id="err-return">Return date must be after pick-up date.</span>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="period"><i class="fa-solid fa-clock" style="margin-right:6px;color:#f5c518;"></i>Rental Period</label>
-          <select id="period">
-            <option value="">Select period</option>
-            <option>Daily</option>
-            <option>Weekly</option>
-            <option>Monthly</option>
-          </select>
-          <span class="error-msg" id="err-period">Please select a rental period.</span>
-        </div>
-        <div class="form-group">
-          <label for="notes"><i class="fa-solid fa-note-sticky" style="margin-right:6px;color:#f5c518;"></i>Additional Notes</label>
-          <textarea id="notes" placeholder="Any special requests or requirements..."></textarea>
-        </div>
-        <button class="submit-btn" onclick="validateAndBook()">Confirm Booking <i class="fa-solid fa-check"></i></button>
       </div>
-    </div>
 
-    <!-- FOOTER -->
-    <footer>
-      <p>© 2025 <span>All Copyrights Claimed By ASNYC Rentals Ltd</span></p>
-    </footer>
+      <!-- FOOTER -->
+      <footer>
+        <p>© 2025 <span>All Copyrights Claimed By ASNYC Rentals Ltd</span></p>
+      </footer>
 
-    <script src="script.js" defer></script>
+      <script src="script.js" defer></script>
+    </main>
   </body>
 </html>
