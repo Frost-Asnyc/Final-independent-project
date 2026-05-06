@@ -1,4 +1,3 @@
-// ─────────────────────────────────────────────
 //  ASNYC RENTALS – index.js
 //  Handles: modal flow, form validation,
 //  localStorage persistence, event listeners
@@ -22,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //  Cache DOM nodes 
+
 function cacheDOM() {
   bookingForm = document.getElementById("bookingform");
   formCarName = document.getElementById("form-car-name");
@@ -34,6 +34,7 @@ function cacheDOM() {
 }
 
 //  Set minimum selectable dates 
+
 function setMinDates() {
   const today = new Date().toISOString().split("T")[0];
   if (pickupDateInput) pickupDateInput.min = today;
@@ -41,6 +42,7 @@ function setMinDates() {
 }
 
 // Prefill name & phone from localStorage 
+
 function prefillSavedProfile() {
   const saved = loadProfile();
   if (!saved) return;
@@ -49,8 +51,10 @@ function prefillSavedProfile() {
 }
 
 //  Attaching all event listeners 
-function attachEventListeners() {
   // Push return date minimum forward when pickup changes
+
+
+function attachEventListeners() {
   if (pickupDateInput) {
     pickupDateInput.addEventListener("change", () => {
       if (returnDateInput) {
@@ -66,6 +70,7 @@ function attachEventListeners() {
   }
 
   // Clear field error as soon as user starts fixing it
+
   const fields = ["fullName", "phone", "pickupDate", "returnDate", "period"];
   fields.forEach((id) => {
     const el = document.getElementById(id);
@@ -76,6 +81,7 @@ function attachEventListeners() {
   });
 
   // Click the dark overlay to close the form
+
   if (bookingForm) {
     bookingForm.addEventListener("click", (e) => {
       if (e.target === bookingForm) closeform();
@@ -83,6 +89,7 @@ function attachEventListeners() {
   }
 
   // ESC key closes any open modal
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeform();
@@ -118,20 +125,21 @@ function closeform() {
   }
 }
 
-// 
 //  FORM VALIDATION AREA 
-// 
+
 function validateAndBook() {
   let valid = true;
 
-  // Full name – needs first and last name
+  // Full name – reqires first and last name
+
   const name = fullNameInput ? fullNameInput.value.trim() : "";
   if (!name || name.split(" ").length < 2) {
     showError("fullName", "err-name");
     valid = false;
   }
 
-  // Phone – at least 10 digits
+  // Phonenumber – at least 10 digits
+
   const phone = phoneInput ? phoneInput.value.replace(/\D/g, "") : "";
   if (phone.length < 10) {
     showError("phone", "err-phone");
@@ -139,6 +147,7 @@ function validateAndBook() {
   }
 
   // Pick-up date
+
   const pickup = pickupDateInput ? pickupDateInput.value : "";
   if (!pickup) {
     showError("pickupDate", "err-pickup");
@@ -146,6 +155,7 @@ function validateAndBook() {
   }
 
   // Return date – must be after pickup
+
   const ret = returnDateInput ? returnDateInput.value : "";
   if (!ret || ret <= pickup) {
     showError("returnDate", "err-return");
@@ -153,6 +163,7 @@ function validateAndBook() {
   }
 
   // Rental period
+
   const period = periodSelect ? periodSelect.value : "";
   if (!period) {
     showError("period", "err-period");
@@ -162,6 +173,7 @@ function validateAndBook() {
   if (!valid) return;
 
   // Save name + phone to localStorage
+
   saveProfile({ fullName: name, phone: phoneInput.value.trim() });
 
   const bookingData = {
@@ -201,40 +213,13 @@ function resetFormErrors() {
     .forEach((el) => el.classList.remove("input-error"));
 }
 
-// ─────────────────────────────────────────────
 //  CONFIRMATION MODAL
 //  Shows booking summary + DOB check
-// ─────────────────────────────────────────────
+
 function injectConfirmationModal() {
   if (document.getElementById("confirmationModal")) return;
 
-  const html = `
-  <div class="form-overlay" id="confirmationModal" style="display:none;">
-    <div class="form" style="max-width:460px;">
-      <button class="form-close" onclick="closeModal('confirmationModal')">✕</button>
 
-      <div style="font-size:40px;text-align:center;margin-bottom:8px;">📋</div>
-      <h2>Confirm Your Details</h2>
-      <p style="font-size:13px;color:#888;margin:-4px 0 18px;">
-        Review your booking before we confirm it.
-      </p>
-
-      <div id="conf-details"
-           style="background:#f9f9f9;border-radius:12px;padding:16px;
-                  font-size:14px;line-height:1.9;margin-bottom:20px;color:#333;">
-      </div>
-
-      <div class="form-group">
-        <label for="dob">Date of Birth</label>
-        <input type="date" id="dob" />
-        <span class="error-msg" id="err-dob">
-          You must be 18 or older to rent a vehicle.
-        </span>
-      </div>
-
-      <button class="submit-btn" onclick="confirmBooking()">Confirm Booking ✓</button>
-    </div>
-  </div>`;
 
   document.body.insertAdjacentHTML("beforeend", html);
 
@@ -260,6 +245,7 @@ function openConfirmationModal(bookingData) {
   window._pendingBooking = bookingData;
 
   // color:#333 on every <p> overrides any global CSS tinting the text
+
   document.getElementById("conf-details").innerHTML = `
     <p style="margin:0 0 2px;color:#333"><strong>🚗 Vehicle:</strong> ${bookingData.car.name}</p>
     <p style="margin:0 0 2px;color:#333"><strong>👤 Name:</strong> ${bookingData.customer.name}</p>
@@ -283,9 +269,11 @@ function confirmBooking() {
   }
 
   // Save DOB to localStorage
+
   saveProfile({ dob: dobVal });
 
   // Save completed booking
+
   saveBooking({
     ...window._pendingBooking,
     bookedAt: new Date().toISOString(),
@@ -295,11 +283,13 @@ function confirmBooking() {
   closeModal("confirmationModal");
 
   // Simple success message
+  
   const name = window._pendingBooking.customer.name.split(" ")[0];
   alert(`🎉 Booking confirmed, ${name}! We'll be in touch soon.`);
 }
 
-// ── 18+ age check ──────────────────────────────
+//    18+ age check
+
 function isAdult(dobString) {
   const dob = new Date(dobString);
   const now = new Date();
@@ -311,10 +301,10 @@ function isAdult(dobString) {
   );
 }
 
-// ─────────────────────────────────────────────
 //  WELCOME BANNER – reads from localStorage
 //  Greets returning users in the navbar
-// ─────────────────────────────────────────────
+
+
 function showWelcomeBanner() {
   const saved = loadProfile();
   if (!saved?.fullName) return;
@@ -329,9 +319,8 @@ function showWelcomeBanner() {
   nav.appendChild(greeting);
 }
 
-// ─────────────────────────────────────────────
 //  OVERLAY HELPERS
-// ─────────────────────────────────────────────
+
 function showOverlay(id) {
   const el = document.getElementById(id);
   if (!el) return;
@@ -350,9 +339,8 @@ function closeModal(id) {
   }, 300);
 }
 
-// ─────────────────────────────────────────────
 //  LOCAL STORAGE – Profile
-// ─────────────────────────────────────────────
+
 function saveProfile(data) {
   const existing = loadProfile() || {};
   try {
@@ -371,9 +359,8 @@ function loadProfile() {
   }
 }
 
-// ─────────────────────────────────────────────
 //  LOCAL STORAGE – Bookings
-// ─────────────────────────────────────────────
+
 function saveBooking(booking) {
   const all = getBookings();
   all.push(booking);
@@ -393,9 +380,8 @@ function getBookings() {
   }
 }
 
-// ─────────────────────────────────────────────
 //  UTILITIES
-// ─────────────────────────────────────────────
+
 function formatDate(str) {
   if (!str) return "—";
   return new Date(str + "T00:00:00").toLocaleDateString("en-KE", {

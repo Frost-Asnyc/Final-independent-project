@@ -1,13 +1,10 @@
-// ─────────────────────────────────────────────
 //  ASNYC RENTALS – services.js
 //  Handles: enquiry modal, form validation,
 //  table column highlight, localStorage read
-// ─────────────────────────────────────────────
 
 const STORAGE_KEY = "asnyc_user_profile";
 const BOOKINGS_KEY = "asnyc_bookings";
 
-// ── Initialise ─────────────────────────────────
 document.addEventListener("DOMContentLoaded", () => {
   prefillEnquiryForm();
   showWelcomeBanner();
@@ -15,10 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
   attachEnquiryListeners();
 });
 
-// ─────────────────────────────────────────────
 //  PREFILL – reads name & phone from localStorage
 //  so returning users don't retype their details
-// ─────────────────────────────────────────────
+
 function prefillEnquiryForm() {
   const saved = loadProfile();
   if (!saved) return;
@@ -32,10 +28,9 @@ function prefillEnquiryForm() {
   }
 }
 
-// ─────────────────────────────────────────────
 //  WELCOME BANNER – reads from localStorage
 //  Greets returning users in the navbar
-// ─────────────────────────────────────────────
+
 function showWelcomeBanner() {
   const saved = loadProfile();
   if (!saved?.fullName) return;
@@ -50,10 +45,9 @@ function showWelcomeBanner() {
   nav.appendChild(greeting);
 }
 
-// ─────────────────────────────────────────────
 //  BOOKING NOTICE – reads bookings from localStorage
 //  Shows a banner if the user has existing bookings
-// ─────────────────────────────────────────────
+
 function showBookingNotice() {
   const bookings = getBookings();
   if (!bookings.length) return;
@@ -71,9 +65,8 @@ function showBookingNotice() {
   if (nav) nav.insertAdjacentElement("afterend", notice);
 }
 
-// ─────────────────────────────────────────────
 //  EVENT LISTENERS – live clear errors on input
-// ─────────────────────────────────────────────
+
 function attachEnquiryListeners() {
   const fields = ["eq-name", "eq-phone", "eq-email"];
   fields.forEach((id) => {
@@ -81,7 +74,6 @@ function attachEnquiryListeners() {
     if (el) el.addEventListener("input", () => clearEnquiryError(id));
   });
 
-  // Click overlay to close
   const modal = document.getElementById("enquiryModal");
   if (modal) {
     modal.addEventListener("click", (e) => {
@@ -89,15 +81,13 @@ function attachEnquiryListeners() {
     });
   }
 
-  // ESC key closes modal
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeEnquiry();
   });
 }
 
-// ─────────────────────────────────────────────
 //  ENQUIRY MODAL – open / close
-// ─────────────────────────────────────────────
+
 function openEnquiry(serviceName) {
   // Update the modal header with the selected service
   const title = document.getElementById("enquiry-service-name");
@@ -127,9 +117,8 @@ function closeEnquiry() {
   }, 300);
 }
 
-// ─────────────────────────────────────────────
 //  ENQUIRY FORM VALIDATION
-// ─────────────────────────────────────────────
+
 function submitEnquiry() {
   let valid = true;
 
@@ -140,7 +129,7 @@ function submitEnquiry() {
     valid = false;
   }
 
-  // Phone – at least 10 digits
+  // Phonenumber – at least 10 digits
   const phone =
     document.getElementById("eq-phone")?.value.replace(/\D/g, "") ?? "";
   if (phone.length < 10) {
@@ -149,6 +138,7 @@ function submitEnquiry() {
   }
 
   // Email – basic format check
+
   const email = document.getElementById("eq-email")?.value.trim() ?? "";
   if (!email || !email.includes("@") || !email.includes(".")) {
     showEnquiryError("eq-email", "eq-err-email");
@@ -171,7 +161,7 @@ function submitEnquiry() {
   );
 }
 
-// ── Show / hide field errors ───────────────────
+//Show field errors
 function showEnquiryError(fieldId, errId) {
   document.getElementById(fieldId)?.classList.add("input-error");
   const err = document.getElementById(errId);
@@ -195,36 +185,26 @@ function resetEnquiryErrors() {
     .forEach((el) => el.classList.remove("input-error"));
 }
 
-// ─────────────────────────────────────────────
-//  COMPARISON TABLE – column highlight
-//  Clicking a column header highlights that column
-// ─────────────────────────────────────────────
 function highlightColumn(colIndex) {
   const table = document.querySelector(".comparison-table");
   if (!table) return;
 
-  // Get all cells in that column position across all rows
   const allCells = table.querySelectorAll(
     `td:nth-child(${colIndex + 1}), th:nth-child(${colIndex + 1})`,
   );
 
-  // Check if this column is already highlighted — toggle it off if so
   const alreadyHighlighted = allCells[0]?.classList.contains("col-highlight");
 
-  // Remove all highlights first
   table
     .querySelectorAll(".col-highlight")
     .forEach((el) => el.classList.remove("col-highlight"));
 
-  // Apply highlight to clicked column (unless toggling off)
   if (!alreadyHighlighted) {
     allCells.forEach((cell) => cell.classList.add("col-highlight"));
   }
 }
 
-// ─────────────────────────────────────────────
 //  LOCAL STORAGE HELPERS
-// ─────────────────────────────────────────────
 function saveProfile(data) {
   const existing = loadProfile() || {};
   try {
@@ -252,9 +232,7 @@ function getBookings() {
   }
 }
 
-// ─────────────────────────────────────────────
 //  UTILITIES
-// ─────────────────────────────────────────────
 function formatDate(str) {
   if (!str) return "—";
   return new Date(str).toLocaleDateString("en-KE", {
