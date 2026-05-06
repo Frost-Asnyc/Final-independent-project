@@ -2,7 +2,6 @@
 //  ASNYC RENTALS – index.js
 //  Handles: modal flow, form validation,
 //  localStorage persistence, event listeners
-// ─────────────────────────────────────────────
 
 const STORAGE_KEY = "asnyc_user_profile";
 const BOOKINGS_KEY = "asnyc_bookings";
@@ -12,7 +11,7 @@ let currentCar = { name: "", code: "", price: "" };
 let bookingForm, formCarName, formCarDetails;
 let fullNameInput, phoneInput, pickupDateInput, returnDateInput, periodSelect;
 
-// ── Initialise ─────────────────────────────────
+// Initialisation
 document.addEventListener("DOMContentLoaded", () => {
   cacheDOM();
   setMinDates();
@@ -22,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   showWelcomeBanner();
 });
 
-// ── Cache DOM nodes ─────────────────────────────
+//  Cache DOM nodes 
 function cacheDOM() {
   bookingForm = document.getElementById("bookingform");
   formCarName = document.getElementById("form-car-name");
@@ -34,14 +33,14 @@ function cacheDOM() {
   periodSelect = document.getElementById("period");
 }
 
-// ── Set minimum selectable dates ───────────────
+//  Set minimum selectable dates 
 function setMinDates() {
   const today = new Date().toISOString().split("T")[0];
   if (pickupDateInput) pickupDateInput.min = today;
   if (returnDateInput) returnDateInput.min = today;
 }
 
-// ── Prefill name & phone from localStorage ──────
+// Prefill name & phone from localStorage 
 function prefillSavedProfile() {
   const saved = loadProfile();
   if (!saved) return;
@@ -49,7 +48,7 @@ function prefillSavedProfile() {
   if (phoneInput && saved.phone) phoneInput.value = saved.phone;
 }
 
-// ── Attach all event listeners ─────────────────
+//  Attaching all event listeners 
 function attachEventListeners() {
   // Push return date minimum forward when pickup changes
   if (pickupDateInput) {
@@ -92,9 +91,8 @@ function attachEventListeners() {
   });
 }
 
-// ─────────────────────────────────────────────
-//  BOOKING FORM – open / close
-// ─────────────────────────────────────────────
+//  BOOKING FORM – open and close
+
 function openModal(carName, carCode = "—", carPrice = "—") {
   currentCar = { name: carName, code: carCode, price: carPrice };
 
@@ -120,9 +118,9 @@ function closeform() {
   }
 }
 
-// ─────────────────────────────────────────────
-//  FORM VALIDATION
-// ─────────────────────────────────────────────
+// 
+//  FORM VALIDATION AREA 
+// 
 function validateAndBook() {
   let valid = true;
 
