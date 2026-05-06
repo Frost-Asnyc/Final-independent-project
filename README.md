@@ -1,80 +1,81 @@
- ASNYC Rentals LTD
 
-PROJECT DESCRIPTION
 
-**ASNYC Rentals Ltd** is a premium web application designed for the elite traveler. Our platform serves as the premier gateway to high-end automotive luxury across the entire continent. Whether for a business gala, a coastal road trip, or a personal milestone, ASNYC helps users discover and book their dream luxury vehicle from our curated, "eye-dropping" fleet.
+# 🏎️ ASNYC Rentals LTD
 
-HOW IT WORKS
+## 📝 Project Description
+**ASNYC Rentals Ltd** is a high-end web application built for the elite traveler in the African continent. The platform showcases an "eye-dropping" curated fleet of luxury vehicles—ranging from executive SUVs like the **Audi RSQ8** to high-performance sports cars like the **RS7 Sportback**. 
 
-1. **Search:** Users visit the ASNYC landing page to begin their journey.
-2. **Browse:** Explore an extensive selection of luxury vehicles, from high-performance supercars to elegant executive sedans.
-3. **Filter:** Narrow down choices based on brand, performance, or location.
-4. **Reserve:** View detailed car specifications and select the perfect match for your needs.
+The site provides a seamless user experience, allowing clients to browse premium vehicles with transparent daily and monthly pricing, and an integrated booking system for instant reservations.
 
----
-
-  SET-UP AND INSTALATION
-
-PREREQUISITES
-
-* A modern web browser (Chrome, Firefox, Safari, or Edge).
-* Basic understanding of HTML/CSS for local modifications.
-
-INSTALATION
-
-1. **Clone the repository:**
-   ```bash
-   git clone -- git@github.com/[Frost-Asnyc]/Final-Independant-project
-
-   ```
-2. **Navigate to the project folder:**
-   bash
-   cd Independant-Final-Project
-
-3. **Launch:**
-   Open `index.html` in your browser to view the storefront.
+## 🚀 Key Features
+*   **Premium Fleet Gallery:** Handpicked selection of vehicles with detailed specs (Seats, CC, Fuel Type, and Transmission).
+*   **Dynamic Booking System:** An interactive form overlay that captures user details, pick-up/return dates, and custom notes.
+*   **Responsive Luxury UI:** A "dark mode" aesthetic designed with **Poppins** and **Bebas Neue** typography for a premium feel.
+*   **Live Stats:** Real-time counters showcasing 50+ vehicles and 2,000+ happy clients.
 
 ---
 
-BDD [BEHAVIOR-DRIVEN DEVELOPMENT]
+## 🛠 Set-up and Installation
 
-| **View Fleet** | User is on the homepage | They click "Browse Collection" | All available luxury cars are displayed |
-| **Car Details** | User is browsing cars | They click on a specific vehicle | Detailed specs and pricing are shown |
-| **Search Function** | User wants a specific brand | They enter "Ferrari" in search | Only Ferrari models are filtered and shown |
+### Prerequisites
+*   A modern web browser (Chrome, Firefox, or Edge).
+*   Live Server extension (recommended for the best experience).
+
+### Installation
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/Frost-Asnyc/Final-Independant-project.git
+    ```
+2.  **Navigate to the project folder:**
+    ```bash
+    cd Final-Independant-project
+    ```
+3.  **Launch:**
+    Simply open `index.html` in your browser.
 
 ---
 
-TECHNOLOGY USED
+## 🧪 BDD (Behavior-Driven Development)
 
-* **HTML5:** Semantic structure for the car listings and navigation.
-* **CSS3:** Custom styling to provide a "luxury" aesthetic, including responsive layouts for mobile and desktop.
-* **Git:** Version control for project management.
+
+| **Fleet Navigation** | User is on the Hero section | They click "Browse Fleet" | The page smooth-scrolls to the `#fleet` section |
+| **Reservation Modal** | User finds a car (e.g., Audi RSQ8) | They click "Book Now" | A modal pops up pre-filled with the car name and price |
+| **Form Validation** | User leaves the name field empty | They click "Confirm Booking" | An error message "Please enter your full name" appears |
+| **Date Logic** | User selects a return date before a pick-up date | They attempt to submit | An error message prevents the submission |
 
 ---
 
-PROJECT STRUCTURE
+## 💻 Technology Used
+*   **HTML5:** Structured using semantic elements for accessibility and SEO.
+*   **CSS3:** Custom properties (variables) for the gold (`#f5c518`) and dark themes, including Flexbox and Grid layouts.
+*   **JavaScript (ES6):** 
+    *   **Modal Logic:** `openModal()` and `closeform()` functions for UI interaction.
+    *   **Validation:** Custom logic to ensure phone numbers and dates are valid before submission.
+*   **FontAwesome:** Used for high-quality vector icons (cars, users, calendars).
 
+---
+
+## 📂 Project Structure
 ```text
-Independent final project
-├── index.html       # Homepage & Car Gallery
-├── styles.css       # Premium UI Styling
-├── README.md        # Project Documentation
-|---About.html       # Team Biogrphy
-└── assets/          # Folder containing the car images
+class_buisness/
+├── index.html       # Main landing page & booking modal
+├── about.html       # Company history & team biography
+├── services.html    # Detailed list of rental services
+├── style.css        # Premium UI styling and animations
+├── script.js        # Form validation and modal logic
+└── *.jpg / *.webp   # High-resolution vehicle imagery
 ```
 
 ---
 
-AUTHOUR
-
- LERIONKA OLENTIKI
-* **Project:** ASNYC Rentals Ltd
-* **School Project:** 2026
+## 👤 Author
+**LERIONKA OLENTIKI**
+*   **Project:** ASNYC Rentals Ltd
+*   **Date:** May 2026
 
 ---
 
- LICENSE
-
+## 📜 License
 Copyright © 2026 **ASNYC Rentals Ltd**.
-This project is for educational purposes.
+This project is for educational purposes. All rights reserved.
 
